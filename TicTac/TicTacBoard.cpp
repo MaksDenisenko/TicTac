@@ -20,8 +20,13 @@ TicTacBoard::~TicTacBoard()
 
 void TicTacBoard::Show()
 {
+	cout << "  ";
+	for (unsigned int i = 0; i < boardsize; i++)
+		cout << i << " ";
+	cout << endl;
 	for (unsigned int i = 0; i < boardsize; i++)
 	{
+		cout << i << " ";
 		for (unsigned int j = 0; j < boardsize; j++)
 		{
 			switch (cells[i][j])
