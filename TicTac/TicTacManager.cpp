@@ -1,1 +1,54 @@
 #include "TicTacManager.h"
+
+TicTacManager::TicTacManager()
+{
+
+}
+TicTacManager::~TicTacManager()
+{
+	delete this->board, this->player1, this->player2;
+}
+
+bool TicTacManager::Init()
+{
+	unsigned int boardsize;
+	string playerName;
+	cout << "Введите число клеток поля (3-6): ";
+	cin >> boardsize;
+	if ((boardsize < 3) || (boardsize > 6))
+	{
+		cout << "Неверное число клеток поля" << endl;
+		return false;
+	}
+	this->board = new TicTacBoard(boardsize);
+	this->player1 = new	TicTacPlayer();
+	this->player2 = new TicTacPlayer();
+	cin.ignore();
+	cout << "Введите имя первого игрока (управляет Х): ";
+	getline(cin, playerName);
+	player1->SetupPlayer(playerName, CellType_X);
+	cout << "Введите имя второго игрока (управляет O): ";
+	getline(cin, playerName);
+	player2->SetupPlayer(playerName, CellType_O);
+	player1->SetBoard(this->board);
+	player2->SetBoard(this->board);
+	currentPlayer = player1;
+
+	return true;
+}
+
+void TicTacManager::ShowBoard()
+{
+	this->board->Show();
+}
+
+void TicTacManager::MakeMove()
+{
+	ShowBoard();
+	while (!currentPlayer->MakeMove())
+	{
+		cout << "Недопустимый ход, попробуйте еще раз" << endl;
+		ShowBoard();
+	}
+	currentPlayer = (currentPlayer == player1) ? player2 : player1;
+}

@@ -52,3 +52,9 @@ void TicTacBoard::SetCell(unsigned int xpos, unsigned int ypos, CellType ct)
 	cells[xpos][ypos] = ct;
 }
 
+bool TicTacBoard::CheckLegal(unsigned int xpos, unsigned int ypos)
+{
+	if ((xpos < 0) || (xpos > boardsize - 1) || (ypos < 0) || (ypos > boardsize - 1))
+		return false;
+	return (cells[xpos][ypos] == CellType_Empty);
+}

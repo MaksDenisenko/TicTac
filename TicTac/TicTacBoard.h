@@ -11,6 +11,8 @@ public:
 	virtual ~TicTacBoard();
 	void Show();
 	void SetCell(unsigned int xpos, unsigned int ypos, CellType ct);
+	bool CheckLegal(unsigned int xpos, unsigned int ypos);
+
 };
 
 

@@ -1,12 +1,18 @@
 ﻿#include "pch.h"
-#include "TicTacBoard.h"
+#include "TicTacManager.h"
 
 int main()
 {
-	TicTacBoard* board;
-	board = new TicTacBoard(5);
-	board->SetCell(0, 1, CellType_O);
-	board->Show();
-	_getch();
-	delete board;
+	setlocale(LC_ALL, "Russian");
+	TicTacManager manager;
+	if (!manager.Init())
+	{
+		cout << "Неверные данные, выходим...";
+		_getch();
+		return 0;
+	}
+	while (true)
+	{
+		manager.MakeMove();
+	}
 }
