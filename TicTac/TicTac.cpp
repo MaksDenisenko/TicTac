@@ -11,8 +11,9 @@ int main()
 		_getch();
 		return 0;
 	}
-	while (true)
+	while (!manager.IsGameFinished())
 	{
 		manager.MakeMove();
 	}
+	_getch();
 }

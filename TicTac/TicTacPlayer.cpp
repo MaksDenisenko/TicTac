@@ -28,9 +28,9 @@ bool TicTacPlayer::MakeMove()
 	cin >> row;
 	cout << "Введите столбец: ";
 	cin >> col;
-	if (this->board->CheckLegal(col, row))
+	if (this->board->CheckLegal(row, col))
 	{
-		this->board->SetCell(col, row, this->cellType);
+		this->board->SetCell(row, col, this->cellType);
 		return true;
 	}
 	

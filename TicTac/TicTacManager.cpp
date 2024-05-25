@@ -50,5 +50,20 @@ void TicTacManager::MakeMove()
 		cout << "Недопустимый ход, попробуйте еще раз" << endl;
 		ShowBoard();
 	}
+	if (this->board->CheckEndCondition())
+	{
+		if (this->board->IsVictory())
+			cout << "Игрок " << currentPlayer->GetName() << " победил!" << endl;
+		else
+			cout << "Ничья" << endl;
+		this->bGameFinished = true;
+		ShowBoard();
+		return;
+	}
 	currentPlayer = (currentPlayer == player1) ? player2 : player1;
+}
+
+bool TicTacManager::IsGameFinished()
+{
+	return bGameFinished;
 }
