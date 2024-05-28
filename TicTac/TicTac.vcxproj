@@ -130,6 +130,7 @@
     <ClCompile Include="TicTac.cpp" />
     <ClCompile Include="TicTacBoard.cpp" />
     <ClCompile Include="TicTacManager.cpp" />
+    <ClCompile Include="TicTacHumanPlayer.cpp" />
     <ClCompile Include="TicTacPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +138,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="TicTacBoard.h" />
     <ClInclude Include="TicTacManager.h" />
+    <ClInclude Include="TicTacHumanPlayer.h" />
     <ClInclude Include="TicTacPlayer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

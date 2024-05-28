@@ -1,4 +1,5 @@
 #include "TicTacManager.h"
+#include "TicTacHumanPlayer.h"
 
 TicTacManager::TicTacManager()
 {
@@ -21,8 +22,8 @@ bool TicTacManager::Init()
 		return false;
 	}
 	this->board = new TicTacBoard(boardsize);
-	this->player1 = new	TicTacPlayer();
-	this->player2 = new TicTacPlayer();
+	this->player1 = new	TicTacHumanPlayer();
+	this->player2 = new TicTacHumanPlayer();
 	cin.ignore();
 	cout << "Введите имя первого игрока (управляет Х): ";
 	getline(cin, playerName);
