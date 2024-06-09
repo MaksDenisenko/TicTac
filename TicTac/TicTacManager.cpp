@@ -1,5 +1,6 @@
 #include "TicTacManager.h"
 #include "TicTacHumanPlayer.h"
+#include "TicTacComputerPlayer.h";
 
 TicTacManager::TicTacManager()
 {
@@ -14,6 +15,8 @@ bool TicTacManager::Init()
 {
 	unsigned int boardsize;
 	string playerName;
+	int playertype;
+
 	cout << "Введите число клеток поля (3-6): ";
 	cin >> boardsize;
 	if ((boardsize < 3) || (boardsize > 6))
@@ -22,8 +25,19 @@ bool TicTacManager::Init()
 		return false;
 	}
 	this->board = new TicTacBoard(boardsize);
-	this->player1 = new	TicTacHumanPlayer();
-	this->player2 = new TicTacHumanPlayer();
+
+	cout << "Введите тип игрока №1 (1 - Человек, любое другое число - компьютер): ";
+	cin >> playertype;
+	if (playertype == 1)
+		this->player1 = new TicTacHumanPlayer();
+	else
+		this->player1 = new TicTacComputerPlayer();
+	cout << "Введите тип игрока №2 (1 - Человек, любое другое число - компьютер): ";
+	cin >> playertype;
+	if (playertype == 1)
+		this->player2 = new TicTacHumanPlayer();
+	else
+		this->player2 = new TicTacComputerPlayer();
 	cin.ignore();
 	cout << "Введите имя первого игрока (управляет Х): ";
 	getline(cin, playerName);

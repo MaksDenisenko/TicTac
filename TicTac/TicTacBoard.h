@@ -13,6 +13,7 @@ private:
 	bool IsBoardFull();
 public:
 	TicTacBoard(unsigned int size);
+	TicTacBoard(TicTacBoard* board);
 	virtual ~TicTacBoard();
 	void Show();
 	void SetCell(unsigned int xpos, unsigned int ypos, CellType ct);

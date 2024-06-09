@@ -129,17 +129,23 @@
   <ItemGroup>
     <ClCompile Include="TicTac.cpp" />
     <ClCompile Include="TicTacBoard.cpp" />
+    <ClCompile Include="TicTacBoardMonteCarloEvaluator.cpp" />
+    <ClCompile Include="TicTacComputerPlayer.cpp" />
     <ClCompile Include="TicTacManager.cpp" />
     <ClCompile Include="TicTacHumanPlayer.cpp" />
     <ClCompile Include="TicTacPlayer.cpp" />
+    <ClCompile Include="TicTacRandomPleyer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellType.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="TicTacBoard.h" />
+    <ClInclude Include="TicTacBoardMonteCarloEvaluator.h" />
+    <ClInclude Include="TicTacComputerPlayer.h" />
     <ClInclude Include="TicTacManager.h" />
     <ClInclude Include="TicTacHumanPlayer.h" />
     <ClInclude Include="TicTacPlayer.h" />
+    <ClInclude Include="TicTacRandomPleyer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
